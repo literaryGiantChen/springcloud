@@ -1,25 +1,27 @@
 package com.diu.cloud;
 
-import com.diu.myrule.MySelfRule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
- * @author DIU
- * @date 2021/9/29 19:59
+ * 消费者
+ *
+ * @Author: DIU
+ * @Date: 2021/10/4 15:36
  */
 @SpringBootApplication
+@EnableFeignClients
+@EnableHystrix
 @Slf4j
-@EnableEurekaClient
-@RibbonClient(name = "CLOUD-PAYMENT-SERVICE", configuration = MySelfRule.class)
-public class MainApp80 {
+public class OrderHystrixMain80 {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(MainApp80.class);
+        ConfigurableApplicationContext run = SpringApplication.run(OrderHystrixMain80.class);
         log.info("初始化组件一共有：{}", run.getBeanDefinitionCount());
     }
+
 }

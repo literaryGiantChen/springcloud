@@ -1,4 +1,4 @@
-# com.diu.cloud-provider-payment8001
+cmd# com.diu.cloud-provider-payment8001
 
 # 第一
 

@@ -34,3 +34,11 @@ eureka:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.diu.cloud.pojo #所有Entity别名类所在包
+
+management:
+  enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+      base-path: /

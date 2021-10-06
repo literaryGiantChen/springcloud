@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: DIU
@@ -58,6 +59,27 @@ public class PaymentController {
         } else {
             return new CommonResult<Integer>(444, "修改数据失败", null);
         }
+    }
+
+    /**
+     * 获取端口号
+     *
+     * @return 返回端口号
+     */
+    @GetMapping(value = "/lb")
+    public String getServerPort() {
+        return serverPort;
+    }
+
+    @GetMapping(value = "/feign/timeout")
+    public String paymentFeignTimeOut() {
+        log.info("*****paymentFeignTimeOut from port: {}*****", serverPort);
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 
 }
