@@ -18,6 +18,7 @@ public class GateWayConfig {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
+        // localhost:9527/guonei
         routes.route("path-route-diu", r -> r.path("/guonei").uri("http://news.baidu.com/guonei")).build();
         routes.route("path-route-diu2", r -> r.path("/guoji").uri("http://news.baidu.com/guonji")).build();
         return routes.build();

@@ -1,0 +1,67 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      ####读取分支
+      label: master
+      server:
+        git:
+          uri: git@github.com:literaryGiantChen/springcloud-config.git #GitHub上面的git仓库名字
+          ####搜索目录
+          search-paths:
+            - springcloud-config
+          username: 1647251522@qq.com
+          password: SingleDog1314520
+          strict-host-key-checking: false
+          ignore-local-ssh-settings: true
+          private-key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            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
+            -----END OPENSSH PRIVATE KEY-----
+
+#服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    instance-id: config-center3344

@@ -1,4 +1,4 @@
-cmd# com.diu.cloud-provider-payment8001
+# com.diu.cloud-provider-payment8001
 
 # 第一
 
@@ -78,6 +78,7 @@ cmd# com.diu.cloud-provider-payment8001
 
 Web server failed to start. Port 8001 was already in use.
 
+    netstat -aon|findstr "1080"
     打开 cmd 
         1：输入：netstat -ano
             在本地地址找到项目的端口号，记录PID的号码，最后一串数字。
