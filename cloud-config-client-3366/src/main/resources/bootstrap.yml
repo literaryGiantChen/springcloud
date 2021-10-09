@@ -11,7 +11,7 @@
 #因为bootstrap.yml是比application.yml先加载的。bootstrap.yml优先级高于application.yml
 
 server:
-  port: 3355
+  port: 3366
 
 spring:
   devtools:
@@ -40,7 +40,7 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
-    instance-id: config-client3355
+    instance-id: config-client3366
 
 # 暴露监控端点
 management:
