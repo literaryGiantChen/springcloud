@@ -22,7 +22,10 @@ spring:
           destination: studyExchange # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
           binder: { defaultRabbit } # 设置要绑定的消息服务的具体设置
-
+          # 如果没有分组，默认生成新的组，就会实现重复消费的情况
+          # 在消费中，配置相同的分组名，他们会去竞争消费消息
+          # 可以理解为：两个客户端要去同一个店铺购买商品，但是商品只剩下一件，所以要他们去竞争。 默认是轮询算法，分配消息
+          group: consumerA
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:

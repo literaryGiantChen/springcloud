@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class ConfigClientController {
 
+    /**
+     * 获取中心化配置的属性值
+     */
     @Value("${config.info}")
     private String configInfo;
 
